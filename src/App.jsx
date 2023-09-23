@@ -11,7 +11,7 @@ import Loading from "./components/Loading/Loading";
 
 function App() {
   const [loading, setLoading] = useState(false);
-  
+
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
@@ -20,7 +20,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div>
       {loading ? (
         <Loading />
       ) : (
@@ -34,7 +34,7 @@ function App() {
           <Footer />
         </>
       )}
-    </>
+    </div>
   );
 }
 

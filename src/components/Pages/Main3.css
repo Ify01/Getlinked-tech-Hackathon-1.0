@@ -60,7 +60,11 @@
   bottom: -10%;
 }
 
-.rule-star img,
+.rule-star img {
+  width: 1.4rem;
+  animation: crescendo 3.0s alternate infinite ease-in;
+}
+
 .rule-star2 img {
   width: 1.4rem;
   animation: crescendo 1.5s alternate infinite ease-in;
@@ -136,8 +140,8 @@
   }
   .rule-star2 {
     position: absolute;
-    right: 10%;
-    bottom: 10%;
+    left: 10%;
+    bottom: -10%;
   }
 
   .rule-right-text2 p {

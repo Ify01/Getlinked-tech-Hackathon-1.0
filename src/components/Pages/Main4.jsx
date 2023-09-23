@@ -1,10 +1,22 @@
 import "./Main4.css";
 import couple from "../../assets/couple.svg";
+import star from "../../assets/star.svg";
+import star1 from "../../assets/star (1).svg";
+import star3 from "../../assets/star3.svg";
 
 const Main4 = () => {
   return (
     <div className="judge-main container" id="judge">
       <div className="judge-flex">
+        <div className="judge-star">
+          <img src={star3} alt="star3" />
+        </div>
+        <div className="judge-star1">
+          <img src={star} alt="star" />
+        </div>
+        <div className="judge-star2">
+          <img src={star1} alt="star1" />
+        </div>
         <div className="judge-left">
           <img src={couple} alt="couple" />
         </div>
