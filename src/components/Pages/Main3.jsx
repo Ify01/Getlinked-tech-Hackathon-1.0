@@ -2,10 +2,23 @@ import "./Main3.css";
 import girl from "../../assets/girl.svg";
 import star from "../../assets/star.svg";
 import star1 from "../../assets/star (1).svg";
+import { motion, useScroll } from "framer-motion";
+import { useRef } from "react";
 
 const Main3 = () => {
+  const scrollRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ["0 1", " 1.33 1"],
+  });
+
   return (
-    <div className="rule-main container">
+    <motion.div
+      ref={scrollRef}
+      style={{ scale: scrollYProgress, opacity: scrollYProgress }}
+      className="rule-main container"
+    >
       <div className="rule-flex">
         <div className="rule-right">
           <div className="rule-right-text">
@@ -38,7 +51,7 @@ const Main3 = () => {
           <img src={girl} alt="girl" />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

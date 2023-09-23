@@ -2,10 +2,23 @@ import "./Main2.css";
 import idea from "../../assets/big idea.svg";
 import arrow from "../../assets/arrow.svg";
 import star from "../../assets/star3.svg";
+import { motion, useScroll } from "framer-motion";
+import { useRef } from "react";
 
 const Main2 = () => {
+  const scrollRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ["0 1", " 1.33 1"],
+  });
+
   return (
-    <div className="idea-main container">
+    <motion.div
+      ref={scrollRef}
+      style={{ scale: scrollYProgress, opacity: scrollYProgress }}
+      className="idea-main container"
+    >
       <div className="idea-flex">
         <div className="idea-left">
           <div className="idea-img">
@@ -39,7 +52,7 @@ const Main2 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
