@@ -1,5 +1,7 @@
 import "./Main3.css";
 import girl from "../../assets/girl.svg";
+import star from "../../assets/star.svg";
+import star1 from "../../assets/star (1).svg";
 
 const Main3 = () => {
   return (
@@ -11,6 +13,9 @@ const Main3 = () => {
               Rules and
               <br /> <span>Guidelines</span>
             </h2>
+            <div className="rule-star">
+              <img src={star} alt="star1" />
+            </div>
           </div>
           <div className="rule-right-text2">
             <p>
@@ -22,6 +27,10 @@ const Main3 = () => {
               technology, and creating solutions that can change the world,
               that&apos;s what we&apos;re all about!
             </p>
+
+            <div className="rule-star2">
+              <img src={star1} alt="star1" />
+            </div>
           </div>
         </div>
 

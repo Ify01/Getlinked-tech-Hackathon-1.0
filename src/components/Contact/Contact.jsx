@@ -1,22 +1,45 @@
 import "./Contact.css";
-import { useRef } from "react";
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import x from "../../assets/x.svg";
-import emailjs from "@emailjs/browser";
+
+const baseUrl = "https://backend.getlinked.ai";
 
 const Contact = () => {
-  const form = useRef();
+  const [message, setMessage] = useState("");
+  const [first_name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
-  const sendEmail = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      "service_89804az",
-      "template_crawfn4",
-      form.current,
-      "wvW2U-iKhzhUN8wLI"
-    );
-    e.target.reset();
+    let join = { email, message, first_name };
+
+    try {
+      const response = await fetch(`${baseUrl}/hackathon/contact-form`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(join),
+      });
+
+      console.log(JSON.stringify(join));
+
+      if (response.ok) {
+        toast.success("Message Successfully Sent");
+      } else {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+    } catch (err) {
+      toast.error("Failed: " + err.message);
+    }
+
+    setEmail(" ");
+    setMessage(" ");
+    setName(" ");
   };
+
   return (
     <div className="contact container">
       <div className="contact-main">
@@ -44,12 +67,30 @@ const Contact = () => {
                 <p>Email us below to any question related to our event</p>
               </div>
 
-              <form ref={form} onSubmit={sendEmail}>
+              <form onSubmit={handleSubmit}>
                 <div className="contact-flex2-inner2">
-                  <input type="text" placeholder="Team Name" required />
-                  <input type="text" placeholder="Topic" required/>
-                  <input type="email" placeholder="Mail" required/>
-                  <textarea name="message" placeholder="Massage" required></textarea>
+                  <input
+                    value={first_name}
+                    onChange={(e) => setName(e.target.value)}
+                    type="text"
+                    placeholder="First Name"
+                    required
+                  />
+                  <input
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    type="email"
+                    placeholder="Mail"
+                    required
+                  />
+                  <textarea
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    name="message"
+                    placeholder="Massage"
+                    required
+                  ></textarea>
+                  <ToastContainer />
                 </div>
 
                 <div className="contact-btn">

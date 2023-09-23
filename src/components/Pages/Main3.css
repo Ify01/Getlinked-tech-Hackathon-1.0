@@ -44,6 +44,28 @@
   background-color: #903aff;
 }
 
+.rule-right-text,
+.rule-right-text2 {
+  position: relative;
+}
+
+.rule-star {
+  position: absolute;
+  right: 45%;
+  top: -10%;
+}
+.rule-star2 {
+  position: absolute;
+  right: -10%;
+  bottom: -10%;
+}
+
+.rule-star img,
+.rule-star2 img {
+  width: 1.4rem;
+  animation: crescendo 1.5s alternate infinite ease-in;
+}
+
 .rule-right-text h2 {
   color: #fff;
   font-family: Clash Display;
@@ -105,6 +127,17 @@
   }
   .rule-right-text h2 span {
     font-size: 1.5rem;
+  }
+
+  .rule-star {
+    position: absolute;
+    right: 20%;
+    top: -10%;
+  }
+  .rule-star2 {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
   }
 
   .rule-right-text2 p {

@@ -2,56 +2,64 @@ import "./Register.css";
 import register from "../../assets/register.svg";
 import move1 from "../../assets/1.svg";
 import move2 from "../../assets/2.svg";
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 // import OverLay from "./OverLay";
-import Select from "react-select";
-import { toast } from "react-toastify";
+// import Select from "react-select";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const baseUrl = "https://backend.getlinked.ai";
 
 const Register = () => {
-  const options = [
-    { value: "1", label: "MOBILE" },
-    { value: "2", label: "WEB" },
-    { value: "3", label: "BACKEND" },
-  ];
+  // const options = [
+  //   { value: "1", label: "MOBILE" },
+  //   { value: "2", label: "WEB" },
+  //   { value: "3", label: "BACKEND" },
+  // ];
 
-  const options1 = [
-    { value: "1", label: "1" },
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
-    { value: "4", label: "4" },
-    { value: "5", label: "5" },
-    { value: "6", label: "6" },
-    { value: "7", label: "7" },
-    { value: "8", label: "8" },
-    { value: "9", label: "9" },
-    { value: "10", label: "10" },
-  ];
+  // const options1 = [
+  //   { value: "1", label: "1" },
+  //   { value: "2", label: "2" },
+  //   { value: "3", label: "3" },
+  //   { value: "4", label: "4" },
+  //   { value: "5", label: "5" },
+  //   { value: "6", label: "6" },
+  //   { value: "7", label: "7" },
+  //   { value: "8", label: "8" },
+  //   { value: "9", label: "9" },
+  //   { value: "10", label: "10" },
+  // ];
+  // const [category, setCategory] = useState("");
+  // const [total, setTotal] = useState("");
+  // const [accept, setAccept] = useState("");
 
-  const [team, setTeam] = useState("");
-  const [phone, setPhone] = useState("");
+  const [team_mate, setTeam] = useState("");
+  const [phone_number, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [topic, setTopic] = useState("");
-  const [category, setCategory] = useState("WEB");
-  const [total, setTotal] = useState("");
-  const [accept, setAccept] = useState("");
+  const [project_topic, setTopic] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let join = { team, phone, email, topic, category, total, accept };
-    // console.log(regobj);
+    let join = { email, team_mate, phone_number, project_topic };
 
-    fetch("https://backend.getlinked.ai/hackathon/registration", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(join),
-    })
-      .then((res) => {
-        toast.success("registered");
-      })
-      .catch((err) => {
-        toast.error("Failed : " + err.message);
+    try {
+      const response = await fetch(`${baseUrl}/hackathon/registration`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(join),
       });
+
+      console.log(JSON.stringify(join));
+
+      if (response.ok) {
+        toast.success("Registered successfully");
+      } else {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+    } catch (err) {
+      toast.error("Failed: " + err.message);
+    }
   };
 
   return (
@@ -81,7 +89,7 @@ const Register = () => {
                     <div className="team">
                       <label htmlFor="team">Team’s Name</label>
                       <input
-                        value={team}
+                        value={team_mate}
                         onChange={(e) => setTeam(e.target.value)}
                         type="text"
                         placeholder="Enter the name of your group"
@@ -90,7 +98,7 @@ const Register = () => {
                     <div className="phone">
                       <label htmlFor="Phone">Phone</label>
                       <input
-                        value={phone}
+                        value={phone_number}
                         onChange={(e) => setPhone(e.target.value)}
                         type="number"
                         placeholder="Enter your phone number"
@@ -111,7 +119,7 @@ const Register = () => {
                     <div className="topic">
                       <label htmlFor="topic">Project Topic</label>
                       <input
-                        value={topic}
+                        value={project_topic}
                         onChange={(e) => setTopic(e.target.value)}
                         type="text"
                         placeholder="What is your group project topic"
@@ -119,7 +127,7 @@ const Register = () => {
                     </div>
                   </div>
 
-                  <div className="register-select">
+                  {/* <div className="register-select">
                     <div className="register-form3">
                       <Select
                         value={category}
@@ -134,7 +142,7 @@ const Register = () => {
                         options={options1}
                       />
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="register-review">
                     <p>
@@ -142,7 +150,7 @@ const Register = () => {
                     </p>
                   </div>
 
-                  <div className="register-check">
+                  {/* <div className="register-check">
                     <input
                       type="checkbox"
                       checked={accept}
@@ -152,11 +160,12 @@ const Register = () => {
                       I agreed with the event terms and conditions and privacy
                       policy
                     </p>
-                  </div>
+                  </div> */}
 
                   <div className="register-btn">
                     <button>Register Now</button>
                   </div>
+                  <ToastContainer />
                 </div>
               </form>
             </div>
