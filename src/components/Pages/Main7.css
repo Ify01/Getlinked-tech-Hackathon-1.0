@@ -1,0 +1,253 @@
+.medal {
+  margin-top: 5rem;
+  background: #0c0227;
+}
+
+.medal-top-flex {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5rem;
+}
+
+.medal-main-flex1 {
+  position: relative;
+}
+.medal-main-flex1::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 15%;
+  bottom: 30px;
+  filter: blur(120px);
+  border-radius: 50%px;
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  background-color: #903aff;
+}
+.medal-top2 h2 {
+  color: #fff;
+  font-family: Clash Display;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.medal-top2 h2 span {
+  color: #d434fe;
+  font-family: Clash Display;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.medal-top2 p {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 170.9%; /* 1.709rem */
+}
+.medal-main-flex1 img {
+  width: 480px;
+}
+.medal-main-flex {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 4rem;
+}
+
+.medal-main-silver,
+.medal-main-bronze {
+  border-radius: 0.5rem;
+  border: 1px solid #d434fe;
+  background: rgba(212, 52, 254, 0.12);
+  position: relative;
+  height: 11rem;
+  padding: 0.6rem;
+}
+
+.medal-main-silver img,
+.medal-main-bronze img {
+  width: 120px;
+  margin-top: -40%;
+}
+
+.medal-main-gold img {
+  width: 170px;
+  margin-top: -60%;
+}
+.medal-main-gold {
+  border-radius: 0.5rem;
+  border: 1px solid #903aff;
+  background: rgba(144, 58, 255, 0.12);
+  position: relative;
+  height: 13rem;
+}
+
+.medal-main-flex2 {
+  display: flex;
+  gap: 20px;
+  padding-top: 12rem;
+}
+
+.medal-main-flex2 h1 {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+}
+.medal-main-flex2 h2 {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+}
+.medal-main-flex2 h3 {
+  color: #d434fe;
+  font-family: Montserrat;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+  line-height: 216.4%; /* 4.328rem */
+}
+
+@media screen and (max-width: 992px) {
+  .medal-top2 h2 {
+    font-size: 1.8rem;
+  }
+  .medal-main-silver,
+  .medal-main-bronze {
+    padding: 0.4rem;
+  }
+  .medal-top2 h2 span {
+    font-size: 1.8rem;
+  }
+
+  .medal-top2 p {
+    font-size: 0.8rem;
+  }
+  .medal-main-flex1 img {
+    width: 400px;
+  }
+  .medal-main-silver img,
+  .medal-main-bronze img {
+    width: 90px;
+    margin-top: -40%;
+  }
+
+  .medal-main-gold img {
+    width: 130px;
+    margin-top: -60%;
+  }
+  .medal-main-flex2 h1 {
+    font-size: 1.2rem;
+  }
+  .medal-main-flex2 h2 {
+    font-size: 1rem;
+  }
+  .medal-main-flex2 h3 {
+    font-size: 1.2rem;
+  }
+
+  .medal-main-flex2 {
+    gap: 10px;
+    padding-top: 10rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .medal-top-flex {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4.5rem;
+  }
+  .medal-main-flex2 {
+    padding-top: 7.5rem;
+  }
+  .medal-main-flex {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .medal-main-flex1 img {
+    width: 320px;
+    padding-top: 2.5rem;
+  }
+
+  .medal-main-silver img,
+  .medal-main-bronze img {
+    width: 70px;
+    padding-left: 11px;
+    margin-top: -40%;
+  }
+
+  .medal-main-gold img {
+    width: 110px;
+    margin-top: -60%;
+  }
+
+  .medal-top2 h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .medal-top2 h2 span {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .medal-top2 p {
+    font-size: 0.67rem;
+    text-align: center;
+  }
+
+  .medal-main-silver,
+  .medal-main-bronze {
+    height: 9rem;
+  }
+  .medal-main-gold {
+    height: 11rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .medal-main-flex1 img {
+    width: 270px;
+    padding-top: 2.5rem;
+  }
+  .medal-main-silver img,
+  .medal-main-bronze img {
+    width: 60px;
+    padding-left: 0px;
+    margin-top: -40%;
+  }
+
+  .medal-main-gold img {
+    width: 80px;
+    margin-top: -60%;
+  }
+  .medal-main-flex2 h1 {
+    font-size: 0.8rem;
+  }
+  .medal-main-flex2 h2 {
+    font-size: 0.7rem;
+  }
+  .medal-main-flex2 h3 {
+    font-size: 0.8rem;
+  }
+  .medal-main-silver,
+  .medal-main-bronze {
+    height: 6rem;
+  }
+  .medal-main-gold {
+    height: 7.5rem;
+  }
+}

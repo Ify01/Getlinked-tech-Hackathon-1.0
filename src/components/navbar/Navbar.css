@@ -1,0 +1,230 @@
+.navbar {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  align-items: center;
+  padding: 3rem 0rem 1rem 0rem;
+}
+
+.nav-list ul {
+  display: flex;
+  gap: 3rem;
+  color: #fff;
+  list-style: none;
+}
+
+.nav-list {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+
+.nav-btn {
+  border-radius: 0.25rem;
+  background: linear-gradient(
+    270deg,
+    #903aff 0%,
+    #d434fe 56.42%,
+    #ff26b9 99.99%,
+    #fe34b9 100%
+  );
+  padding: 1rem 3rem;
+  color: #fff;
+  border: none;
+}
+
+.nav-logo h1 span {
+  color: #d434fe;
+}
+
+.nav-logo a.act {
+  color: #fff;
+  text-decoration: none;
+}
+.nav-logo a.ina{
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-list a.active {
+  background: linear-gradient(90deg, #903aff 3.08%, #ff26b9 93.85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.nav-list a.inactive {
+  color: #fff;
+  text-decoration: none;
+}
+
+#menuToggle {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .nav-list ul {
+    gap: 2rem;
+  }
+
+  .nav-list {
+    gap: 3rem;
+  }
+
+  .nav-btn {
+    padding: 1rem 2rem;
+  }
+
+  #menuToggle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-list {
+    display: none;
+  }
+  #menuToggle {
+    display: block;
+    position: relative;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .nav-flex {
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+  #menuToggle a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  #menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    opacity: 0; /* hide this */
+    z-index: 200; /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+  }
+
+  /*
+ * Just a quick hamburger
+ */
+  #menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #fff;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  }
+
+  #menuToggle span:first-child {
+    transform-origin: 0% 0%;
+  }
+
+  #menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+
+  /* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+  #menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #fe34b9;
+  }
+
+  /*
+ * But let's hide the middle one.
+ */
+  #menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  /*
+ * Ohyeah and the last one should go the other direction
+ */
+  #menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+
+  #menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    overflow-y: hidden;
+    width: 100%;
+    transition: 0.3s;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    background: #150e28;
+    backdrop-filter: blur(30px);
+    backdrop-filter: blur(10px);
+    transform-origin: 0% 0%;
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    padding-top: 5rem;
+  }
+
+  #menu li {
+    padding: 0.5rem 3rem;
+    color: #fff;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.0625rem;
+  }
+
+  .menu-btn {
+    margin: 1rem 3rem;
+  }
+
+  .menu-btn button {
+    border-radius: 0.25rem;
+    background: linear-gradient(
+      270deg,
+      #903aff 0%,
+      #d434fe 56.42%,
+      #ff26b9 99.99%,
+      #fe34b9 100%
+    );
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 1rem 3rem;
+    border: none;
+  }
+
+  /*
+ * And let's slide it in from the left
+ */
+  #menuToggle input:checked ~ ul {
+    transform: none;
+  }
+}

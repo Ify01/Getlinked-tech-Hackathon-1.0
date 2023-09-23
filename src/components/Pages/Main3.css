@@ -1,0 +1,149 @@
+.rule-main {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+.rule-flex {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.rule-right {
+  order: 1;
+  position: relative;
+}
+.rule-left {
+  order: 2;
+  position: relative;
+}
+
+.rule-right::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 25%;
+  top: -60px;
+  filter: blur(120px);
+  border-radius: 50%px;
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  background-color: #903aff;
+}
+.rule-left::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 5%;
+  top: 150px;
+  filter: blur(120px);
+  border-radius: 50%px;
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  background-color: #903aff;
+}
+
+.rule-right-text h2 {
+  color: #fff;
+  font-family: Clash Display;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+}
+.rule-right-text h2 span {
+  color: #d434fe;
+  font-family: Clash Display;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.rule-right-text2 p {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.71875rem; /* 196.429% */
+  padding-top: 1rem;
+}
+
+.rule-left img {
+  width: 500px;
+}
+
+@media screen and (max-width: 992px) {
+  .rule-left img {
+    width: 400px;
+  }
+
+  .rule-right-text h2 {
+    font-size: 1.8rem;
+  }
+  .rule-right-text h2 span {
+    font-size: 1.8rem;
+  }
+
+  .rule-right-text2 p {
+    font-size: 0.775rem;
+    padding-top: 1rem;
+  }
+  .rule-flex {
+    gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .rule-left img {
+    width: 300px;
+  }
+
+  .rule-right-text h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .rule-right-text h2 span {
+    font-size: 1.5rem;
+  }
+
+  .rule-right-text2 p {
+    font-size: 0.7rem;
+    padding-top: 1rem;
+    text-align: center;
+  }
+  .rule-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .rule-right {
+    order: 2;
+  }
+  .rule-left {
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .rule-left img {
+    width: 250px;
+  }
+
+  .rule-right-text h2 {
+    font-size: 1.2rem;
+  }
+  .rule-right-text h2 span {
+    font-size: 1.2rem;
+  }
+  .rule-right-text2 p {
+    font-size: 0.7rem;
+    padding-top: 1rem;
+  }
+  .rule-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

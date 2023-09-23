@@ -1,0 +1,266 @@
+.privacy {
+  margin-top: 7rem;
+}
+
+.privacy-left-top h1 {
+  color: #fff;
+  font-family: Clash Display;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.privacy-left-top h1 span {
+  color: #d434fe;
+  font-family: Clash Display;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.privacy-left-top p {
+  color: rgba(255, 255, 255, 0.75);
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3rem;
+}
+.privacy-left-top h3 {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+.privacy-left-main {
+  border-radius: 0.3125rem;
+  border: 1px solid #d434fe;
+  background: rgba(217, 217, 217, 0.03);
+  margin-top: 4rem;
+}
+
+.privacy-left {
+  position: relative;
+}
+
+.privacy-left::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 15%;
+  bottom: 0px;
+  filter: blur(120px);
+  border-radius: 50%px;
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  background-color: #903aff;
+}
+
+.privacy-left-inner {
+  padding: 4rem;
+}
+
+.privacy-left-inner h3 {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 216.4%; /* 1.8935rem */
+}
+.privacy-left-inner h4 {
+  color: #d434fe;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 216.4%; /* 2.164rem */
+  padding-top: 2rem;
+}
+.privacy-left-inner span {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 216.4%; /* 1.8935rem */
+}
+
+.privacy-list {
+  display: flex;
+  padding-top: 2rem;
+  gap: 1rem;
+  align-items: center;
+}
+.privacy-list p {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 216.4%; /* 1.8935rem */
+}
+.privacy-list svg {
+  width: 1.0625rem;
+  height: 1.0625rem;
+}
+
+.privacy-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.privacy-btn button {
+  border-radius: 0.25rem;
+  background: linear-gradient(
+    270deg,
+    #903aff 0%,
+    #d434fe 56.42%,
+    #ff26b9 99.99%,
+    #fe34b9 100%
+  );
+  padding: 1rem 3rem;
+  color: #fff;
+  margin-top: 2rem;
+  border: none;
+}
+
+.privacy-flex {
+  display: flex;
+  gap: 20px;
+}
+
+.secure-icon img {
+  width: 450px;
+  padding-left: 110px;
+}
+
+.secure-human img {
+  width: 550px;
+  margin-top: -390px;
+  padding-left: 4%;
+}
+
+@media screen and (max-width: 992px) {
+  .secure-icon img {
+    width: 450px;
+  }
+
+  .secure-human img {
+    width: 450px;
+    margin-top: -435px;
+    padding-left: 8%;
+  }
+  .privacy-left-top h1 {
+    font-size: 1.8rem;
+  }
+  .privacy-left-top h1 span {
+    font-size: 1.8rem;
+  }
+
+  .privacy-left-top p {
+    font-size: 0.875rem;
+    line-height: 2rem;
+  }
+  .privacy-left-inner {
+    padding: 2rem;
+  }
+  .privacy-left-inner h3 {
+    font-size: 1rem;
+    line-height: 1.5; /* 1.8935rem */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .secure-icon img {
+    width: 300px;
+    padding-left: 0px;
+  }
+
+  .privacy-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .secure-human img {
+    width: 250px;
+    margin-top: -245px;
+    padding-left: 5%;
+  }
+
+  .privacy-right {
+    margin-top: 3rem;
+  }
+  .privacy-left-top h1 {
+    font-size: 1.5rem;
+  }
+  .privacy-left-top h1 span {
+    font-size: 1.5rem;
+  }
+
+  .privacy-left-top p {
+    font-size: 0.675rem;
+    line-height: 2rem;
+  }
+
+  .privacy-left-inner h3 {
+    font-size: 1rem;
+    line-height: 2; /* 1.8935rem */
+  }
+  .privacy-left-top h3 {
+    font-size: 0.8rem;
+    line-height: 2rem;
+  }
+  .privacy-btn button {
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .secure-icon img {
+    width: 200px;
+    padding-left: 0px;
+  }
+
+  .privacy-right {
+    margin-top: 2rem;
+  }
+  .secure-human img {
+    width: 150px;
+    margin-top: -165px;
+    padding-left: 8%;
+  }
+  .privacy-left-top h1 {
+    font-size: 1.5rem;
+  }
+  .privacy-left-top h1 span {
+    font-size: 1.3rem;
+  }
+
+  .privacy-left-top p {
+    font-size: 0.675rem;
+    line-height: 2rem;
+  }
+
+  .privacy-left-inner h3 {
+    font-size: 0.8rem;
+    line-height: 2; /* 1.8935rem */
+  }
+  .privacy-left-top h3 {
+    font-size: 0.7rem;
+    line-height: 2rem;
+  }
+
+  .privacy-btn button {
+    padding: 0.5rem 1.5rem;
+    margin-top: 2rem;
+    border: none;
+  }
+}

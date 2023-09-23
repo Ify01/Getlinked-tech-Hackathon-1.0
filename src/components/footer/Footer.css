@@ -1,0 +1,176 @@
+.footer {
+  background-color: #100b20;
+  margin-top: 10rem;
+}
+
+.footer-inner {
+  padding: 5rem;
+}
+
+.footer-flex1 h1 {
+  color: #fff;
+  font-family: Clash Display;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-bottom: 1rem;
+}
+.footer-flex {
+  display: flex;
+  gap: 6rem;
+}
+.footer-flex1 h1 span {
+  color: #d434fe;
+  font-family: Clash Display;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.footer-flex1 p {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 172.4%; /* 1.293rem */
+}
+
+.terms {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  padding-top: 3rem;
+}
+
+.terms h3 {
+  border-right: 2px solid #d434fe;
+  padding-right: 2rem;
+}
+.terms h3,
+.terms span {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 172.4%; /* 1.293rem */
+}
+
+.footer-flex2 p,
+.footer-flex3 h3 {
+  color: #d434fe;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 172.4%; /* 1.5085rem */
+}
+
+.footer-flex2 ul li {
+  list-style: none;
+  color: #fff;
+  padding: 0.5rem 0rem;
+  font-family: Montserrat;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 172.4%; /* 1.293rem */
+}
+
+/* .footer-flex1 {
+  width: 450px;
+} */
+
+.follow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.socials {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.socials i {
+  font-size: 20px;
+  color: #fff;
+}
+.socials img {
+  width: 16px;
+}
+.call i,
+.address i {
+  font-size: 20px;
+  color: #fff;
+}
+.call,
+.address {
+  display: flex;
+  padding-top: 1rem;
+  align-items: center;
+  gap: 1rem;
+}
+.call p,
+.address p {
+  color: #fff;
+  padding: 0.5rem 0rem;
+  font-family: Montserrat;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 172.4%;
+}
+
+.copyright {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  padding-bottom: 2.5rem;
+}
+
+@media screen and (max-width: 992px) {
+  .footer-flex {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .footer-flex1 h1 {
+    font-size: 1.575rem;
+  }
+  .footer-flex1 h1 span {
+    font-size: 1.575rem;
+  }
+  .footer-flex1 p {
+    font-size: 0.65rem;
+  }
+  .socials i {
+    font-size: 25px;
+    color: #fff;
+  }
+  .socials img {
+    width: 21px;
+  }
+  .call i,
+  .address i {
+    font-size: 20px;
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .footer-inner {
+    padding: 2rem;
+  }
+
+}

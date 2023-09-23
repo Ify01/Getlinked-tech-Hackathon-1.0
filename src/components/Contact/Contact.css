@@ -1,0 +1,183 @@
+.contact-main {
+  margin: 6rem 2rem 0rem;
+}
+
+.contact-flex {
+  display: flex;
+  align-items: center;
+  gap: 11rem;
+}
+
+.contact-flex1 h1 {
+  color: #d434fe;
+  font-family: Clash Display;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.contact-flex1 p {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 1rem 0rem;
+  line-height: 1.3rem;
+}
+.contact-flex1 h2 {
+  color: #d434fe;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.contact-socials {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding-top: 1rem;
+}
+.contact-socials i {
+  font-size: 20px;
+  color: #fff;
+}
+.contact-socials img {
+  width: 16px;
+}
+.contact-flex2 {
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.contact-flex2-inner {
+  padding: 4rem;
+}
+
+.contact-flex2-inner1 h2 {
+  color: #d434fe;
+  font-family: Clash Display;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.contact-flex2-inner1 p {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 1rem 0rem;
+}
+
+.contact-flex2-inner2 input {
+  border-radius: 0.25rem;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 95%;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+  color: #fff;
+  outline: none;
+}
+.contact-flex2-inner2 textarea {
+  border-radius: 0.25rem;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 95%;
+  height: 100px;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+  color: #fff;
+  outline: none;
+}
+.contact-flex2-inner2 input::placeholder,
+.contact-flex2-inner2 textarea::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.contact-btn button {
+  border-radius: 0.25rem;
+  background: linear-gradient(
+    270deg,
+    #903aff 0%,
+    #d434fe 56.42%,
+    #ff26b9 99.99%,
+    #fe34b9 100%
+  );
+  padding: 0.7rem 2.5rem;
+  border: none;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.contact-btn {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+@media screen and (max-width: 992px) {
+  .contact-main {
+    margin: 4rem;
+  }
+
+  .contact-flex {
+    gap: 6rem;
+  }
+  .contact-flex1 h1 {
+    font-size: 1.8rem;
+  }
+  .contact-flex1 p {
+    font-size: 0.9rem;
+    padding: 1rem 0rem;
+    line-height: 1.3rem;
+  }
+  .contact-flex1 h2 {
+    font-size: 1rem;
+  }
+  .contact-flex2-inner {
+    padding: 2rem;
+  }
+
+  .contact-btn button {
+    padding: 0.6rem 2.3rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-flex1 {
+    display: none;
+  }
+  .contact-main {
+    margin: 2rem;
+  }
+  .contact-flex1 h1 {
+    font-size: 1.5rem;
+  }
+  .contact-flex1 p {
+    font-size: 0.7rem;
+    padding: 1rem 0rem;
+    line-height: 1.3rem;
+  }
+  .contact-flex1 h2 {
+    font-size: 1rem;
+  }
+}
