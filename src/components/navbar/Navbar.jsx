@@ -66,7 +66,6 @@ const Navbar = () => {
 
             <div className="menu-btn">
               <button>
-                {" "}
                 <NavLink
                   to="/register"
                   className={({ isActive }) =>

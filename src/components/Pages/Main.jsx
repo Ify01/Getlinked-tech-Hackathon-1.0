@@ -8,6 +8,7 @@ import metrix from "../../assets/metrix 1.svg";
 import boy from "../../assets/man.png";
 import meta from "../../assets/meta1.png";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   const [countdown, setCountdown] = useState({
@@ -16,7 +17,6 @@ const Main = () => {
     seconds: 0,
   });
 
-  // Set your target date and time here (in UTC)
   const targetDate = new Date("2023-12-31T00:00:00Z");
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Main = () => {
         clearInterval(interval);
         setCountdown({ hours: 0, minutes: 0, seconds: 0 });
       } else {
-        const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
+        const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 204);
         const minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
         const seconds = Math.floor((timeDifference / 1000) % 60);
 
@@ -93,7 +93,13 @@ const Main = () => {
             Big prize
           </p>
 
-          <button className="main-left-btn">Register</button>
+          <button className="main-left-btn">
+            <Link
+              to="/register"
+            >
+              Register
+            </Link>
+          </button>
 
           <div className="star2">
             <img src={star} alt="star" />
@@ -101,13 +107,16 @@ const Main = () => {
 
           <div className="count-down">
             <h3>
-            {countdown.hours.toString().padStart(2, '0')}<span>H</span>
+              {countdown.hours.toString().padStart(2, "0")}
+              <span>H</span>
             </h3>
             <h3>
-            {countdown.minutes.toString().padStart(2, '0')}<span>M</span>
+              {countdown.minutes.toString().padStart(2, "0")}
+              <span>M</span>
             </h3>
             <h3>
-            {countdown.seconds.toString().padStart(2, '0')}<span>s</span>
+              {countdown.seconds.toString().padStart(2, "0")}
+              <span>s</span>
             </h3>
           </div>
         </div>

@@ -3,35 +3,37 @@ import register from "../../assets/register.svg";
 import move1 from "../../assets/1.svg";
 import move2 from "../../assets/2.svg";
 import { useState } from "react";
-// import OverLay from "./OverLay";
-// import Select from "react-select";
+import OverLay from "./OverLay";
+import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const baseUrl = "https://backend.getlinked.ai";
 
 const Register = () => {
-  // const options = [
-  //   { value: "1", label: "MOBILE" },
-  //   { value: "2", label: "WEB" },
-  //   { value: "3", label: "BACKEND" },
-  // ];
+  const options = [
+    { value: "1", label: "MOBILE" },
+    { value: "2", label: "WEB" },
+    { value: "3", label: "BACKEND" },
+  ];
 
-  // const options1 = [
-  //   { value: "1", label: "1" },
-  //   { value: "2", label: "2" },
-  //   { value: "3", label: "3" },
-  //   { value: "4", label: "4" },
-  //   { value: "5", label: "5" },
-  //   { value: "6", label: "6" },
-  //   { value: "7", label: "7" },
-  //   { value: "8", label: "8" },
-  //   { value: "9", label: "9" },
-  //   { value: "10", label: "10" },
-  // ];
-  // const [category, setCategory] = useState("");
-  // const [total, setTotal] = useState("");
-  // const [accept, setAccept] = useState("");
+  const options1 = [
+    { value: "1", label: "1" },
+    { value: "2", label: "2" },
+    { value: "3", label: "3" },
+    { value: "4", label: "4" },
+    { value: "5", label: "5" },
+    { value: "6", label: "6" },
+    { value: "7", label: "7" },
+    { value: "8", label: "8" },
+    { value: "9", label: "9" },
+    { value: "10", label: "10" },
+  ];
+  const [category, setCategory] = useState("");
+  const [total, setTotal] = useState("");
+  const [accept, setAccept] = useState("");
+
+  const [popup, setPopup] = useState(false);
 
   const [team_mate, setTeam] = useState("");
   const [phone_number, setPhone] = useState("");
@@ -127,7 +129,7 @@ const Register = () => {
                     </div>
                   </div>
 
-                  {/* <div className="register-select">
+                  <div className="register-select">
                     <div className="register-form3">
                       <Select
                         value={category}
@@ -142,7 +144,7 @@ const Register = () => {
                         options={options1}
                       />
                     </div>
-                  </div> */}
+                  </div>
 
                   <div className="register-review">
                     <p>
@@ -150,7 +152,7 @@ const Register = () => {
                     </p>
                   </div>
 
-                  {/* <div className="register-check">
+                  <div className="register-check">
                     <input
                       type="checkbox"
                       checked={accept}
@@ -160,10 +162,12 @@ const Register = () => {
                       I agreed with the event terms and conditions and privacy
                       policy
                     </p>
-                  </div> */}
+                  </div>
 
                   <div className="register-btn">
-                    <button>Register Now</button>
+                    <button onClick={() => setPopup(!popup)}>
+                      Register Now
+                    </button>
                   </div>
                   <ToastContainer />
                 </div>
@@ -173,7 +177,11 @@ const Register = () => {
         </div>
       </div>
 
-      {/* <OverLay /> */}
+      {popup && (
+        <>
+          <OverLay setPopup={setPopup} />
+        </>
+      )}
     </div>
   );
 };
