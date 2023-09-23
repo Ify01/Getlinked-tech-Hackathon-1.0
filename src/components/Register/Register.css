@@ -78,7 +78,29 @@
   gap: 1rem;
   margin-top: 1.5rem;
 }
+.register-form3 {
+  width: 100%;
+}
+.register-form4 {
+  width: 100%;
+}
+.register-select {
+  display: flex;
+  margin-top: 1.5rem;
+  gap: 5px;
+}
 
+select {
+  margin: 50px;
+  width: 300px;
+  background: #ff0;
+  color: #000;
+}
+
+
+.select {
+  background-color: transparent;
+}
 .team,
 .phone,
 .email,
