@@ -52,11 +52,30 @@ const Navbar = () => {
               <li>Timeline</li>
               <li>Overview</li>
               <li>FAQs</li>
-              <li>Contacts</li>
+              <li>
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "inactive"
+                  }
+                >
+                  Contact
+                </NavLink>
+              </li>
             </div>
 
             <div className="menu-btn">
-              <button>Register</button>
+              <button>
+                {" "}
+                <NavLink
+                  to="/register"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "inactive"
+                  }
+                >
+                  Register
+                </NavLink>
+              </button>
             </div>
           </ul>
         </div>

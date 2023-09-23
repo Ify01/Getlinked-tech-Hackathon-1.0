@@ -1,0 +1,147 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.container1 {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #eee;
+  overflow: hidden;
+}
+
+/* TEXT */
+#content {
+  background-color: #150e28;
+  background: linear-gradient(#150e28, #150e28);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  text-align: center;
+  font: normal 21px/140px "Ubuntu", Helvetica, Arial, sans-serif;
+  color: #fff;
+}
+
+#content span {
+  vertical-align: middle;
+  animation: fade 1s linear infinite;
+  color: #fff;
+  font-family: Clash Display;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+#content span:nth-child(2) {
+  vertical-align: middle;
+  animation: fade 1s linear infinite;
+  color: #D434FE;
+  font-family: Clash Display;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+/* SPINNING GRADIENT */
+.ring {
+  margin: 0 auto;
+  border-radius: 110px;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation: rotate 1s linear infinite;
+}
+
+
+/* COLORS */
+.green {
+  background: linear-gradient(#D434FE, transparent, #bfff00);
+}
+
+.blue {
+  background: linear-gradient(#3cf, transparent, #3cf);
+}
+
+.red {
+  background: linear-gradient(#cd5c5c, transparent, #cd5c5c);
+}
+
+.purple {
+  background: linear-gradient(#e166e1, transparent, #e166e1);
+}
+
+.orange {
+  background: linear-gradient(#ffa500, transparent, #ffa500);
+}
+.yellow {
+  background: linear-gradient(#D434FE, transparent, #D434FE);
+}
+.silver {
+  background: linear-gradient(#c3c6c4, transparent, #c3c6c4);
+}
+
+/* SOME EXAMPLE COLOR COMBINATONS */
+.blue-red,
+.red-blue {
+  background: linear-gradient(#3cf, transparent, #cd5c5c);
+}
+.orange-silver,
+.silver-orange {
+  background: linear-gradient(#ffa500, transparent, #c3c6c4);
+}
+.blue-green,
+.green-blue {
+  background: linear-gradient(#3cf, transparent, #bfff00);
+}
+.orange-purple,
+.purple-orange {
+  background: linear-gradient(#e166e1, transparent, #cd5c5c);
+}
+.orange-red,
+.red-orange {
+  background: linear-gradient(#e166e1, transparent, #cd5c5c);
+}
+.green-red,
+.red-green {
+  background: linear-gradient(#bfff00, transparent, #cd5c5c);
+}
+.yellow-purple,
+.purple-yellow {
+  background: linear-gradient(#f4f42c, transparent, #e166e1);
+}
+.yellow-red,
+.red-yellow {
+  background: linear-gradient(#cd5c5c, transparent, #f4f42c);
+}

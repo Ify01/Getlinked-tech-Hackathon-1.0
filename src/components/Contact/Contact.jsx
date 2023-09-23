@@ -1,7 +1,22 @@
 import "./Contact.css";
+import { useRef } from "react";
 import x from "../../assets/x.svg";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_89804az",
+      "template_crawfn4",
+      form.current,
+      "wvW2U-iKhzhUN8wLI"
+    );
+    e.target.reset();
+  };
   return (
     <div className="contact container">
       <div className="contact-main">
@@ -29,16 +44,18 @@ const Contact = () => {
                 <p>Email us below to any question related to our event</p>
               </div>
 
-              <div className="contact-flex2-inner2">
-                <input type="text" placeholder="Team Name" />
-                <input type="text" placeholder="Topic" />
-                <input type="email" placeholder="Mail" />
-                <textarea name="message" placeholder="Massage"></textarea>
-              </div>
+              <form ref={form} onSubmit={sendEmail}>
+                <div className="contact-flex2-inner2">
+                  <input type="text" placeholder="Team Name" required />
+                  <input type="text" placeholder="Topic" required/>
+                  <input type="email" placeholder="Mail" required/>
+                  <textarea name="message" placeholder="Massage" required></textarea>
+                </div>
 
-              <div className="contact-btn">
-                <button>Submit</button>
-              </div>
+                <div className="contact-btn">
+                  <button>Submit</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
