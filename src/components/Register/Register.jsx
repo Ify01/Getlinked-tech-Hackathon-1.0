@@ -139,7 +139,7 @@ const Register = () => {
 
                   <div className="register-select">
                     <div className="register-form3">
-                      <label htmlFor="category"></label>
+                      <label htmlFor="category">Category</label>
                       <select
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
@@ -149,7 +149,8 @@ const Register = () => {
                         ))}
                       </select>
                     </div>
-                    <div className="register-form4">
+                    <div className="register-form3">
+                      <label htmlFor="category">Team Size</label>
                       <select
                         value={group_size}
                         onChange={(e) => setTotal(e.target.value)}
