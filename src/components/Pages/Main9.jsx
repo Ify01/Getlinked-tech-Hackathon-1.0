@@ -43,7 +43,7 @@ export const Main9 = () => {
                 </svg>
                 <p>
                   The Standard License grants you a non-exclusive right to
-                  navigate and register for our event
+                  navigate and register for our event.
                 </p>
               </div>
               <div className="privacy-list">
@@ -58,8 +58,8 @@ export const Main9 = () => {
                   <path d="M5 8L7 10.5L13.5 6" stroke="white" strokeWidth="2" />
                 </svg>
                 <p>
-                  The Standard License grants you a non-exclusive right to
-                  navigate and register for our event
+                  You are licensed to use the item available at any free source
+                  sites, for your project development.
                 </p>
               </div>
 

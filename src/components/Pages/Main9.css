@@ -188,7 +188,18 @@
     align-items: center;
     gap: 20px;
   }
-
+  .privacy-list p {
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2rem;
+  }
+  .privacy-list svg {
+    width: 2rem;
+    /* height: 2rem; */
+  }
   .privacy-left-inner {
     padding: 1rem;
   }
@@ -197,6 +208,13 @@
     width: 250px;
     margin-top: -245px;
     padding-left: 5%;
+  }
+
+  .privacy-list {
+    display: flex;
+    padding-top: 1.2rem;
+    gap: 1rem;
+    align-items: start;
   }
 
   .privacy-right {
