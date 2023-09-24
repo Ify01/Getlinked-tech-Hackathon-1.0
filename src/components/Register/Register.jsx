@@ -20,20 +20,20 @@ const Register = () => {
 
   console.log(values);
 
-  const [team_mate, setTeam] = useState("");
-  const [phone_number, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [team_name, setTeam] = useState("");
+  const [phone_number, setPhone] = useState("");
   const [project_topic, setTopic] = useState("");
-  const [category, setCategory] = useState("");
   const [group_size, setTotal] = useState("");
   const [privacy_poclicy_accepted, setAccept] = useState(false);
+  const [category, setCategory] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     let join = {
       email,
-      team_mate,
+      team_name,
       phone_number,
       project_topic,
       group_size,
@@ -61,6 +61,14 @@ const Register = () => {
     } catch (err) {
       toast.error("Failed: " + err.message);
     }
+
+    setEmail("");
+    setCategory("");
+    setPhone("");
+    setTopic("");
+    setTotal("");
+    setTeam("");
+    setAccept("");
   };
 
   return (
@@ -90,7 +98,8 @@ const Register = () => {
                     <div className="team">
                       <label htmlFor="text">Team’s Name</label>
                       <input
-                        value={team_mate}
+                        name="team_name"
+                        value={team_name}
                         onChange={(e) => setTeam(e.target.value)}
                         type="text"
                         placeholder="Enter the name of your group"
@@ -101,6 +110,7 @@ const Register = () => {
                     <div className="phone">
                       <label htmlFor="number">Phone</label>
                       <input
+                        name="phone_number"
                         value={phone_number}
                         onChange={(e) => setPhone(e.target.value)}
                         type="number"
@@ -115,6 +125,7 @@ const Register = () => {
                     <div className="email">
                       <label htmlFor="email">Email</label>
                       <input
+                        name="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         type="email"
@@ -127,6 +138,7 @@ const Register = () => {
                     <div className="topic">
                       <label htmlFor="topic">Project Topic</label>
                       <input
+                        name="project_topic"
                         value={project_topic}
                         onChange={(e) => setTopic(e.target.value)}
                         type="text"
@@ -141,6 +153,8 @@ const Register = () => {
                     <div className="register-form3">
                       <label htmlFor="category">Category</label>
                       <select
+                        name="category"
+                        id="category"
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
                       >
@@ -149,22 +163,17 @@ const Register = () => {
                         ))}
                       </select>
                     </div>
-                    <div className="register-form3">
-                      <label htmlFor="category">Team Size</label>
-                      <select
+                    <div className="phone">
+                      <label htmlFor="number">Group size</label>
+                      <input
                         value={group_size}
                         onChange={(e) => setTotal(e.target.value)}
-                      >
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                      </select>
+                        name="group_size"
+                        id="size"
+                        type="number"
+                        min="0"
+                        step="1"
+                      />
                     </div>
                   </div>
 
@@ -177,6 +186,7 @@ const Register = () => {
                   <div className="register-check">
                     <input
                       type="checkbox"
+                      name="privacy_policy_accepted"
                       checked={privacy_poclicy_accepted}
                       onChange={(e) => setAccept(e.target.value)}
                       id="check"
@@ -190,7 +200,8 @@ const Register = () => {
 
                   <div className="register-btn">
                     <button
-                    // onClick={() => setPopup(!popup)}
+                      type="submit"
+                      // onClick={() => setPopup(!popup)}
                     >
                       Register Now
                     </button>

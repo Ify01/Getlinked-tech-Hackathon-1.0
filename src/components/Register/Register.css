@@ -90,7 +90,7 @@
   gap: 5px;
 }
 
-select {
+.register-select select {
   border-radius: 0.25rem;
   border: 1px solid #fff;
   background: rgba(255, 255, 255, 0.03);
@@ -98,6 +98,17 @@ select {
   width: 100%;
   padding: 0.7rem 0.6rem;
   color: #746c6c;
+}
+
+.register-select input {
+  border-radius: 0.25rem;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  padding: 0.7rem 0.6rem;
+  color: #fff;
+  outline: none;
 }
 
 .team,
@@ -122,6 +133,7 @@ select {
   color: #fff;
   outline: none;
 }
+
 .register-form input::placeholder {
   color: rgba(255, 255, 255, 0.25);
   font-family: Montserrat;
