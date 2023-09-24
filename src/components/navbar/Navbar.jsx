@@ -41,7 +41,7 @@ const Navbar = () => {
         </div>
 
         <div id="menuToggle">
-          <input type="checkbox" />
+          <input type="checkbox" id="check" />
 
           <span></span>
           <span></span>

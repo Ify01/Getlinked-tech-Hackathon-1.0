@@ -3,7 +3,7 @@ import register from "../../assets/register.svg";
 import move1 from "../../assets/1.svg";
 import move2 from "../../assets/2.svg";
 import { useState } from "react";
-import OverLay from "./OverLay";
+// import OverLay from "./OverLay";
 import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -29,21 +29,22 @@ const Register = () => {
     { value: "9", label: "9" },
     { value: "10", label: "10" },
   ];
-  const [category, setCategory] = useState("");
-  const [total, setTotal] = useState("");
-  const [accept, setAccept] = useState("");
+  
 
-  const [popup, setPopup] = useState(false);
+  // const [popup, setPopup] = useState(false);
 
   const [team_mate, setTeam] = useState("");
   const [phone_number, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [project_topic, setTopic] = useState("");
+  const [category, setCategory] = useState("");
+  const [group_size, setTotal] = useState("");
+  const [privacy_poclicy_accepted, setAccept] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let join = { email, team_mate, phone_number, project_topic };
+    let join = { email, team_mate, phone_number, project_topic, group_size, privacy_poclicy_accepted };
 
     try {
       const response = await fetch(`${baseUrl}/hackathon/registration`, {
@@ -89,21 +90,25 @@ const Register = () => {
                 <div className="register-form">
                   <div className="register-form1">
                     <div className="team">
-                      <label htmlFor="team">Team’s Name</label>
+                      <label htmlFor="text">Team’s Name</label>
                       <input
                         value={team_mate}
                         onChange={(e) => setTeam(e.target.value)}
                         type="text"
                         placeholder="Enter the name of your group"
+                        id="text"
+                        required
                       />
                     </div>
                     <div className="phone">
-                      <label htmlFor="Phone">Phone</label>
+                      <label htmlFor="number">Phone</label>
                       <input
                         value={phone_number}
                         onChange={(e) => setPhone(e.target.value)}
                         type="number"
                         placeholder="Enter your phone number"
+                        id="number"
+                        required
                       />
                     </div>
                   </div>
@@ -116,6 +121,9 @@ const Register = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         type="email"
                         placeholder="Enter your email address"
+                        id="email"
+                        autoComplete="on"
+                        required
                       />
                     </div>
                     <div className="topic">
@@ -125,6 +133,8 @@ const Register = () => {
                         onChange={(e) => setTopic(e.target.value)}
                         type="text"
                         placeholder="What is your group project topic"
+                        id="topic"
+                        required
                       />
                     </div>
                   </div>
@@ -135,13 +145,15 @@ const Register = () => {
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
                         options={options}
+                        id="category"
                       />
                     </div>
                     <div className="register-form4">
                       <Select
-                        value={total}
+                        value={group_size}
                         onChange={(e) => setTotal(e.target.value)}
                         options={options1}
+                        id="total"
                       />
                     </div>
                   </div>
@@ -155,8 +167,10 @@ const Register = () => {
                   <div className="register-check">
                     <input
                       type="checkbox"
-                      checked={accept}
+                      checked={privacy_poclicy_accepted}
                       onChange={(e) => setAccept(e.target.value)}
+                      id="check"
+                      required
                     />
                     <p>
                       I agreed with the event terms and conditions and privacy
@@ -165,7 +179,9 @@ const Register = () => {
                   </div>
 
                   <div className="register-btn">
-                    <button onClick={() => setPopup(!popup)}>
+                    <button 
+                    // onClick={() => setPopup(!popup)}
+                    >
                       Register Now
                     </button>
                   </div>
@@ -177,11 +193,11 @@ const Register = () => {
         </div>
       </div>
 
-      {popup && (
+      {/* {popup && (
         <>
           <OverLay setPopup={setPopup} />
         </>
-      )}
+      )} */}
     </div>
   );
 };

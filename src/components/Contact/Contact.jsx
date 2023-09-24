@@ -74,6 +74,8 @@ const Contact = () => {
                     onChange={(e) => setName(e.target.value)}
                     type="text"
                     placeholder="First Name"
+                    id="name"
+                    autoComplete="on"
                     required
                   />
                   <input
@@ -81,6 +83,8 @@ const Contact = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     type="email"
                     placeholder="Mail"
+                    id="email"
+                    autoComplete="on"
                     required
                   />
                   <textarea
@@ -88,6 +92,7 @@ const Contact = () => {
                     onChange={(e) => setMessage(e.target.value)}
                     name="message"
                     placeholder="Massage"
+                    id="mess"
                     required
                   ></textarea>
                   <ToastContainer />

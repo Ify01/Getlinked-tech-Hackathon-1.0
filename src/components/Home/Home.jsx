@@ -7,7 +7,7 @@ import Main6 from "../Pages/Main6";
 import Main7 from "../Pages/Main7";
 import Main8 from "../Pages/Main8";
 import Main9 from "../Pages/Main9";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
 import "../../App.css"
 

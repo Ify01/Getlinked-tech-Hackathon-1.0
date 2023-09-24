@@ -21,19 +21,19 @@ function App() {
 
   return (
     <div>
-      {/* {loading ? (
+      {loading ? (
         <Loading />
-      ) : ( */}
-        <>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/register" element={<Register />} />
-          </Routes>
-          <Footer />
-        </>
-      {/* )} */}
+      ) : (
+      <>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+        <Footer />
+      </>
+      )}
     </div>
   );
 }
