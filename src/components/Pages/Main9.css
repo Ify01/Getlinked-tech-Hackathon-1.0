@@ -106,8 +106,7 @@
   line-height: 216.4%; /* 1.8935rem */
 }
 .privacy-list svg {
-  width: 1.0625rem;
-  height: 1.0625rem;
+  width: 2rem;
 }
 
 .privacy-btn {
@@ -148,11 +147,11 @@
 
 @media screen and (max-width: 992px) {
   .secure-icon img {
-    width: 450px;
+    width: 350px;
   }
 
   .secure-human img {
-    width: 450px;
+    width: 350px;
     margin-top: -435px;
     padding-left: 8%;
   }
@@ -173,6 +172,13 @@
   .privacy-left-inner h3 {
     font-size: 1rem;
     line-height: 1.5; /* 1.8935rem */
+  }
+  .privacy-list svg {
+    width: 2rem;
+  }
+  
+  .privacy-right {
+    margin-top: 230px;
   }
 }
 

@@ -2,36 +2,23 @@ import "./Register.css";
 import register from "../../assets/register.svg";
 import move1 from "../../assets/1.svg";
 import move2 from "../../assets/2.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import OverLay from "./OverLay";
-import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const baseUrl = "https://backend.getlinked.ai";
+// const baseUrl = "https://backend.getlinked.ai";
 
 const Register = () => {
-  const options = [
-    { value: "1", label: "MOBILE" },
-    { value: "2", label: "WEB" },
-    { value: "3", label: "BACKEND" },
-  ];
+  const [values, setValues] = useState([]);
 
-  const options1 = [
-    { value: "1", label: "1" },
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
-    { value: "4", label: "4" },
-    { value: "5", label: "5" },
-    { value: "6", label: "6" },
-    { value: "7", label: "7" },
-    { value: "8", label: "8" },
-    { value: "9", label: "9" },
-    { value: "10", label: "10" },
-  ];
-  
+  useEffect(() => {
+    fetch("https://backend.getlinked.ai/hackathon/categories-list")
+      .then((data) => data.json())
+      .then((val) => setValues(val));
+  }, []);
 
-  // const [popup, setPopup] = useState(false);
+  console.log(values);
 
   const [team_mate, setTeam] = useState("");
   const [phone_number, setPhone] = useState("");
@@ -44,14 +31,25 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let join = { email, team_mate, phone_number, project_topic, group_size, privacy_poclicy_accepted };
+    let join = {
+      email,
+      team_mate,
+      phone_number,
+      project_topic,
+      group_size,
+      category,
+      privacy_poclicy_accepted,
+    };
 
     try {
-      const response = await fetch(`${baseUrl}/hackathon/registration`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(join),
-      });
+      const response = await fetch(
+        "https://backend.getlinked.ai/hackathon/registration",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(join),
+        }
+      );
 
       console.log(JSON.stringify(join));
 
@@ -141,20 +139,31 @@ const Register = () => {
 
                   <div className="register-select">
                     <div className="register-form3">
-                      <Select
+                      <label htmlFor="category"></label>
+                      <select
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
-                        options={options}
-                        id="category"
-                      />
+                      >
+                        {values.map((opts, i) => (
+                          <option key={i}>{opts.name}</option>
+                        ))}
+                      </select>
                     </div>
                     <div className="register-form4">
-                      <Select
+                      <select
                         value={group_size}
                         onChange={(e) => setTotal(e.target.value)}
-                        options={options1}
-                        id="total"
-                      />
+                      >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                      </select>
                     </div>
                   </div>
 
@@ -179,7 +188,7 @@ const Register = () => {
                   </div>
 
                   <div className="register-btn">
-                    <button 
+                    <button
                     // onClick={() => setPopup(!popup)}
                     >
                       Register Now
