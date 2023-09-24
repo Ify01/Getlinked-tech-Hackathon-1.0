@@ -21,9 +21,9 @@ function App() {
 
   return (
     <div>
-      {loading ? (
+      {/* {loading ? (
         <Loading />
-      ) : (
+      ) : ( */}
         <>
           <Navbar />
           <Routes>
@@ -33,7 +33,7 @@ function App() {
           </Routes>
           <Footer />
         </>
-      )}
+      {/* )} */}
     </div>
   );
 }

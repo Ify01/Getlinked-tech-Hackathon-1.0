@@ -3,12 +3,9 @@ import idea from "../../assets/big idea.svg";
 import arrow from "../../assets/arrow.svg";
 import star from "../../assets/star3.svg";
 
-
 const Main2 = () => {
   return (
-    <div
-      className="idea-main container"
-    >
+    <div className="idea-main container">
       <div className="idea-flex">
         <div className="idea-left">
           <div className="idea-img">
